@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Criar Usuário - KEYS
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Criar Novo Usuário</h2>
+    <form method="post" action="{{ url_for('create_user') }}">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Nome</label>
+                <input type="text" name="nome" class="form-control" placeholder="Digite o nome" required>
+            </div>
+            <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Digite o email" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Senha</label>
+                <input type="password" name="password" class="form-control" placeholder="Digite a senha" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Criar Usuário</button>
+    </form>
+</div>
+{% endblock %}

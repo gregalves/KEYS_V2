@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %}Editar Registro{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Editar Registro</h2>
+    <form method="POST" action="{{ url_for('edit_record', record_id=record.id) }}">
+        <div class="mb-3">
+            <label for="tipo_chave">Tipo de Chave</label>
+            <input type="text" name="tipo_chave" class="form-control" value="{{ record.tipo_chave }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="chave">Chave</label>
+            <input type="text" name="chave" class="form-control" value="{{ record.chave }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control" value="{{ record.nome }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ record.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" class="form-control" value="{{ record.cpf }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="empresa">Empresa</label>
+            <input type="text" name="empresa" class="form-control" value="{{ record.empresa }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="citrix">Citrix</label>
+            <input type="text" name="citrix" class="form-control" value="{{ record.citrix }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="gestor_contrato">Gestor do Contrato</label>
+            <input type="text" name="gestor_contrato" class="form-control" value="{{ record.gestor_contrato }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="description_scs">Description SCS</label>
+            <input type="text" name="description_scs" class="form-control" value="{{ record.description_scs }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="chamado_gestao_x">Chamado Gestão X</label>
+            <input type="text" name="chamado_gestao_x" class="form-control" value="{{ record.chamado_gestao_x }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="inicio_contrato">Início do Contrato</label>
+            <input type="date" name="inicio_contrato" class="form-control" value="{{ record.inicio_contrato }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="termino_contrato">Término do Contrato</label>
+            <input type="date" name="termino_contrato" class="form-control" value="{{ record.termino_contrato }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </form>
+</div>
+{% endblock %}

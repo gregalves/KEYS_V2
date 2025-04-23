@@ -1,0 +1,149 @@
+/* Cor principal - Laranja */
+body {
+    background-color: #fdf6e4;
+}
+
+.navbar {
+    background-color: #FF8C00;
+    border-radius: 10px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #FFD700 !important;
+}
+
+/* Estilização dos botões */
+.btn {
+    background-color: #FF8C00;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #FFA500;
+    color: white;
+}
+
+/* Estilização das tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+     overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table thead {
+    background-color: #FF8C00;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #FFD700;
+    color: black;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-brand, .nav-link {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+/* Estilização dos inputs nos formulários */
+input, select {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Criação do efeito de fade-out após 5 segundos */
+.fade-out {
+    animation: fadeOut 5s forwards;  /* A animação dura 5 segundos */
+    -webkit-animation: fadeOut ease 5s;
+    -moz-animation: fadeOut ease 5s;
+    -o-animation: fadeOut ease 5s;
+    -ms-animation: fadeOut ease 5s;
+}
+
+/* Definição da animação de fade-out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden; /* Esconde o alerta, mas não remove imediatamente do DOM */
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        visibility: hidden; /* Esconde o alerta, mas não remove imediatamente do DOM */
+    }
+}
+
+/* Definir uma transição suave para o fade-out */
+.alert {
+    transition: opacity 0.6s ease-out;
+}
+
+/* Ajusta o tamanho dos botões */
+.btn-dashboard {
+    padding: 0px 2px;
+    font-size: 14px;
+    width: 80px; /* Ajuste a largura conforme necessário */
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Alinha os botões na tabela */
+.table-dashboard td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Estilo para o campo de busca */
+#search-bar {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+

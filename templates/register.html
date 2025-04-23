@@ -1,0 +1,85 @@
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        <div id="alert-container" class="alert-container position-fixed top-0 end-0 p-3" style="z-index: 1050;">
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+{% extends 'layout.html' %}
+
+{% block title %}
+Registro - KEYS
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registro de Chave - KEYS</h2>
+    <form method="post" action="/register">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Tipo de Chave</label>
+                <select name="tipo_chave" class="form-control" required>
+                    <option value="F">Funcionário</option>
+                    <option value="E">Externo-Prestador de Serviços</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Nome</label>
+                <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Digite seu email" required>
+            </div>
+            <div class="col-md-6">
+                <label>CPF</label>
+                <input type="text" name="cpf" class="form-control" placeholder="Digite seu CPF" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Empresa</label>
+                <input type="text" name="empresa" class="form-control" placeholder="Digite o nome da empresa" required>
+            </div>
+            <div class="col-md-6">
+                <label>Citrix</label>
+                <select name="citrix" class="form-control" required>
+                    <option value="SIM">SIM</option>
+                    <option value="NÃO">NÃO</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Gestor do Contrato</label>
+                <input type="text" name="gestor_contrato" class="form-control" placeholder="Nome do gestor" required>
+            </div>
+            <div class="col-md-6">
+                <label>Chamado Gestão X</label>
+                <input type="text" name="chamado_gestao_x" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label>Início do Contrato</label>
+                <input type="date" name="inicio_contrato" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label>Término do Contrato</label>
+                <input type="date" name="termino_contrato" class="form-control" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Registrar Chave</button>
+    </form>
+</div>
+{% endblock %}
+
+
