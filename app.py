@@ -104,6 +104,7 @@ def export_record_to_csv(record):
         "Email": record.email,
         "CPF": record.cpf,
         "Empresa": record.empresa,
+        "Subcanal de Vendas": record.subcanal_vendas,
         "Citrix": record.citrix,
         "Gestor do Contrato": record.gestor_contrato,
         "Description SCS": record.description_scs,
