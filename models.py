@@ -29,3 +29,4 @@ class Record(db.Model):
     termino_contrato = db.Column(db.Date, nullable=False)
     created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Relacionamento com User
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(pytz.timezone('America/Sao_Paulo')))
+    subcanal_vendas = db.Column(db.String(100))

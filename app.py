@@ -37,7 +37,7 @@ app.logger.addHandler(log_handler)
 app.logger.setLevel(logging.INFO)
 
 # Defina a versão do programa
-app_version = "1.0.1"
+app_version = "1.0.2"
 
 # Injetar o ano atual e a versão do programa em todos os templates
 @app.context_processor
@@ -317,10 +317,15 @@ def register():
         chamado_gestao_x = request.form['chamado_gestao_x']
         inicio_contrato = request.form['inicio_contrato']
         termino_contrato = request.form['termino_contrato']
+        subcanal_vendas = request.form['subcanal_vendas']  # Novo campo
         
-        # Validação do CPF
+        # Verificação de CPF e e-mail duplicado
         if not validate_cpf(cpf) or Record.query.filter_by(cpf=cpf).first():
             flash('CPF inválido ou já registrado! Verifique e cadastre novamente!', 'danger')
+            return redirect(url_for('register'))
+
+        if Record.query.filter_by(email=email).first():
+            flash('E-mail já registrado! Verifique e cadastre novamente!', 'danger')
             return redirect(url_for('register'))
         
         while True:
@@ -350,8 +355,11 @@ def register():
             chamado_gestao_x=chamado_gestao_x,
             inicio_contrato=inicio_contrato,
             termino_contrato=termino_contrato,
-            created_by=session['user_id'])
+            created_by=session['user_id'],
+            subcanal_vendas=subcanal_vendas  # Novo campo persistido
+        )
         
+     
         db.session.add(novo_registro)
         db.session.commit()
 

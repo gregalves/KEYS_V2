@@ -29,6 +29,7 @@ Registro - KEYS
                     <option value="E">Externo-Prestador de Serviços</option>
                 </select>
             </div>
+        <div class="row mb-3">
             <div class="col-md-6">
                 <label>Nome</label>
                 <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" required>
@@ -39,18 +40,26 @@ Registro - KEYS
                 <label>Email</label>
                 <input type="email" name="email" class="form-control" placeholder="Digite seu email" required>
             </div>
+        <div class="row mb-3">
             <div class="col-md-6">
                 <label>CPF</label>
                 <input type="text" name="cpf" class="form-control" placeholder="Digite seu CPF" required>
             </div>
-        </div>
+            </div>
         <div class="row mb-3">
             <div class="col-md-6">
                 <label>Empresa</label>
                 <input type="text" name="empresa" class="form-control" placeholder="Digite o nome da empresa" required>
             </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label for="subcanal_vendas">Subcanal de Vendas</label>
+                <input type="text" class="form-control" id="subcanal_vendas" name="subcanal_vendas" required>
+            </div>
+        <div class="row mb-3">
             <div class="col-md-6">
-                <label>Citrix</label>
+                <label>VPN</label>
                 <select name="citrix" class="form-control" required>
                     <option value="SIM">SIM</option>
                     <option value="NÃO">NÃO</option>
@@ -81,5 +90,6 @@ Registro - KEYS
     </form>
 </div>
 {% endblock %}
+
 
 
